@@ -1,0 +1,45 @@
+<!--div class="container">
+
+      <!--form class="form-signin">
+        <h2 class="form-signin-heading">Login</h2>
+        
+        
+        <label for="inputuser" class="sr-only">Usuario</label>
+        <div class="form-control">
+        <input type="userName" id="inputuser" value={{userName}} oninput={{action (mut userName) value="target.value"}} class="form-control" placeholder="Usuario" required autofocus>
+        {{!display-errors errors=errors.userName showErrors=showErrors--}}
+
+        
+        {{!input value=userName}}
+        {{display-errors errors=errors.userName showErrors=showErrors}}
+        </div>
+        <label for="inputPassword" class="sr-only">Password</label>
+
+        <div class="form-control">
+        <input type="password" id="inputPassword"value={{password}} oninput={{action (mut password) value="target.value"}} class="form-control" placeholder="Contraseña" required>
+        {{display-errors errors=errors.password showErrors=showErrors}}
+        </div>
+        
+        <div class="checkbox">
+          <label>
+            <input type="checkbox" value="remember-me"> Recordar mi contraseña
+          </label>
+        </div>
+        <button class="btn btn-lg btn-primary btn-block" {{action 'login'}}>Entrar</button>
+      </form-->
+  {{#bs-form formLayout="horizontal" model=this onSubmit=(action "login") as |form|}}
+  {{form.element controlType="userName" label="Usuario" placeholder="Usuario" property="userName"}}
+  {{form.element controlType="password" label="Password" placeholder="Password" property="password"}}
+  {{form.element controlType="checkbox" label="Remember me" property="rememberMe"}}
+  {{bs-button defaultText="Submit" type="primary" buttonType="submit"}}
+  {{/bs-form}}
+
+      <div class="form-signin">
+      <div class="flash-messages">
+      {{#each flashMessages.queue as |flash|}}
+      {{flash-message flash=flash}}
+    {{/each}}
+  </div>
+  </div>
+<!--/div-->
+{{outlet}}

@@ -1,0 +1,12 @@
+
+{{#each model as |people|}}
+<div class="form-signin">
+    <h2 class ="form-singin-heading">Lista de personas</h2>
+    <p><strong>Nombre: </strong>{{people.name}}</p>
+    <p><strong>Salario: </strong>{{people.salary}}</p>
+    <p><strong>Sexo: </strong>{{people.gender}}</p>
+    
+</div>
+    
+{{/each}}
+{{outlet}}  

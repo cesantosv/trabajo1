@@ -1,5 +1,6 @@
 import Service from '@ember/service';
 import Ember from 'ember';
+import EmberValidations from 'ember-validations';
 
 export default Service.extend({
     currentUser: null,
@@ -7,7 +8,7 @@ export default Service.extend({
   store: Ember.inject.service(),
   login(userName, password){
     return new Promise((resolve, reject)=>{
-      $.ajax({
+     /*   $.ajax({
         method: "POST",
         url: '/token',
         data: {
@@ -16,32 +17,33 @@ export default Service.extend({
         }
       }).then((data)=>{
         var token = data['authentication_token'];
-        var user_id = data['user_id'];
-        Cookies.set('userId', user_id);
+        var user_id = data['userName'];
+        Cookies.set('userName', userName);
         Cookies.set('authenticationToken', token);
         this.initializeFromCookie();
         resolve();
       }, ()=>{
-        reject('Username and password did not match');
-      });
+        reject('Username and password did not matcasdh');
+      });*/
 
-      if(userName === 'hola' && password === '123'){
+   /*  if(userName === 'erik' && password === 'password'){
         this.get('store').findAll('user').then((response)=>{
-          var user = rsponse.get('firstObject')
+          var user = response.get('firstObject')
           this.set("currentUser",user)
           Cookies.set('userId',user.id)
           resolve()
         })
+        alert('Logged in');
       }else{
         reject('Username and password did not match')
-      }
+      }*/
     });
   },
   register(userName, password){
     return new Promise((resolve, reject)=>{
       $.ajax({
         method: "POST",
-        url: '/users',
+        url: 'people.register',
         data: {
           userName: userName,
           password: password

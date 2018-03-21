@@ -1,0 +1,44 @@
+<div class="container">
+
+      <form class="form-signin">
+        <h2 class="form-signin-heading">Calculadora</h2>
+        
+        
+        <label class="control-label">Ingrese 2 numeros entre [ -1000 , 1000 ] </label>
+        <div class="form-control">
+        <input type="number" id="inputuser" value={{numero1}} oninput={{action (mut numero1) value="target.value"}} class="form-control" placeholder="Primer Número"  required autofocus>
+        {{!display-errors errors=errors.userName showErrors=showErrors--}}
+
+        
+        {{!input value=userName}}
+        {{display-errors errors=errors.numero1 showErrors=showErrors}}
+        </div>
+        <label for="inputPassword" class="sr-only">Password</label>
+
+        <div class="form-control">
+        <input type="number" id="inputPassword"value={{numero2}} oninput={{action (mut numero2) value="target.value"}} class="form-control" placeholder="Segundo Número"  required>
+        {{display-errors errors=errors.numero2 showErrors=showErrors}}
+        </div>
+        
+        <br/>
+        <button class="btn btn-lg btn-primary btn-block" {{action 'Sumar'}}>Sumar</button><br/>
+        <button class="btn btn-lg btn-primary btn-block" {{action 'Restar'}}>Restar</button>
+        
+      </form>
+      
+       {{!numero1}}  {{!numero2}}
+       <div class="form-signin">
+       <h4 class="form-signin-heading">La Suma de los numeros es: <br/>{{ suma numero1 numero2 }} </h4>
+       <h4 class="form-signin-heading">LA Resta de los numeros es: <br/>{{ resta numero1 numero2 }} </h4>
+       {{resultado}}
+       </div>
+       
+      <div class="form-signin">
+      <div class="flash-messages">
+      {{#each flashMessages.queue as |flash|}}
+      {{flash-message flash=flash}}
+    {{/each}}
+  </div>
+  </div>
+</div>
+{{outlet}}

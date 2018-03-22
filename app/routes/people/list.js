@@ -13,7 +13,7 @@ export default Route.extend({
     beforeModel(){
        
         if(localStorage.getItem('controlSession')){
-            this.replaceWith('list');
+            this.replaceWith('people.list');
         }
         else{
             this.replaceWith('login');

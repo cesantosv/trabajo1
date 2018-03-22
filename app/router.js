@@ -17,6 +17,8 @@ Router.map(function() {
     this.route('list');
     this.route('person',{ path:':id'});
   });
+  this.route('author');
+  this.route('home');
 });
 
 export default Router;

@@ -12,7 +12,7 @@ export default Route.extend({
 
     beforeModel(){
         if(localStorage.getItem('controlSession')){
-            this.replaceWith('calculadora');
+            this.replaceWith('home');
         }
         else{
             this.replaceWith('login');

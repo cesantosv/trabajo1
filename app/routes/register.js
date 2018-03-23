@@ -5,12 +5,13 @@ export default Route.extend({
     singservice: service('sing-service'),
 
     beforeModel() {
-        this.get('flashMessages').success('INICIO DE SESION SATISFACTORIO!');
         if (localStorage.getItem('controlSession')) {
-            this.replaceWith('home');
+            this.replaceWith('register');
         }
         else {
             this.replaceWith('login');
         }
     }
 });
+
+

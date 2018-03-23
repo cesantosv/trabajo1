@@ -1,9 +1,9 @@
 import DS from 'ember-data';
 
-export default DS.Model.extend( {
-    userName: DS.attr('string'),
-    password: DS.attr('string'),
-  
+export default DS.Model.extend({
+  userName: DS.attr('string'),
+  password: DS.attr('string'),
+
   /*  validations: {
       userName: {
         presence: true,
@@ -14,13 +14,13 @@ export default DS.Model.extend( {
         length: { minimum: 8 }
       }
     }*/
-    user:[
-      {
-        id:'Carlos',
-        userName:'erik',
-        password:'password',
-        gender:'M',
-        salary: 100,
+  user: [
+    {
+      id: 'Carlos',
+      userName: 'erik',
+      password: 'password',
+      gender: 'M',
+      salary: 100,
     },
-    ]
-  });
+  ]
+});

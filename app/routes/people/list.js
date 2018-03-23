@@ -1,21 +1,21 @@
 import Route from '@ember/routing/route';
-import { inject as service} from '@ember/service';
+import { inject as service } from '@ember/service';
 
 export default Route.extend({
-    mock : service('mock-service'),
-    
-    model(){
+    mock: service('mock-service'),
+
+    model() {
         return this.get('mock').getPeople();
     },
 
-    singservice : service('sing-service'),
+    singservice: service('sing-service'),
 
-    beforeModel(){
-       
-        if(localStorage.getItem('controlSession')){
+    beforeModel() {
+
+        if (localStorage.getItem('controlSession')) {
             this.replaceWith('people.list');
         }
-        else{
+        else {
             this.replaceWith('login');
         }
     }

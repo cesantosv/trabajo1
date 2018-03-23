@@ -5,22 +5,22 @@
 
         <label for="inputuser" class="sr-only">Usuario</label>
 
-        <input type="text" id="inputuser" value={{userName}} class="form-control" placeholder="Usuario" required autofocus>
+        <input type="text" id="inputuser" value={{userName}} oninput={{action (mut userName) value="target.value" }} class="form-control" placeholder="Usuario" required autofocus>
         {{display-errors errors=errors.userName showErrors=showErrors}}
 
         <label for="inputPassword" class="sr-only">Password</label>
 
-        <input type="password" id="inputPassword"value={{password}} class="form-control" placeholder="Contraseña" required>
+        <input type="password" id="inputPassword"value={{password}} oninput={{action (mut password) value="target.value" }} class="form-control" placeholder="Contraseña" required>
         {{display-errors errors=errors.password showErrors=showErrors}}
 
         <label for="inputsalary" class="sr-only">Salario</label>
 
-        <input type="number" id="inputsalary"value={{salary}} class="form-control" placeholder="Salario" required>
+        <input type="number" id="inputsalary"value={{salary}} oninput={{action (mut salary) value="target.value" }} class="form-control" placeholder="Salario" required>
         {{display-errors errors=errors.salary showErrors=showErrors}}
 
         <label for="inputgender" class="sr-only">Genero</label>
 
-        <input type="text" id="inputgender"value={{gender}} class="form-control" placeholder="Genero" required>
+        <input type="text" id="inputgender"value={{gender}} oninput={{action (mut gender) value="target.value" }} class="form-control" placeholder="Genero" required>
         {{display-errors errors=errors.gender showErrors=showErrors}}
 
         
@@ -36,4 +36,3 @@
   </div>
 </div>
 {{outlet}}
-

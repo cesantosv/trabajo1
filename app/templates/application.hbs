@@ -1,23 +1,22 @@
-{{!-- The following component displays Ember's default welcome message. --}}
-
-{{!-- Feel free to remove this! --}}
+{{!-- The following component displays Ember's default welcome message. --}} {{!-- Feel free to remove this! --}}
 
 <div class="container">
 
-      <!-- The justified navigation menu is meant for single line per list item.
+  <!-- The justified navigation menu is meant for single line per list item.
            Multiple lines will require custom code not provided by Bootstrap. -->
-      <div class="masthead">
-        <h3 class="text-muted">Opciones</h3>
-        <nav>
-          <ul class="nav nav-justified">
-            <li>{{#link-to 'login'}} Login {{/link-to}}</li>
-            <li>{{#link-to 'people.register'}} Registar Usuario {{/link-to}}</li>
-            <li>{{#link-to 'calculadora'}} Calculadora   {{/link-to}}</li>
-            <li>{{#link-to 'people.list'}} Listar Usuarios   {{/link-to}}</li>
-            <!--li> Logout {{action 'logout'}}  </li-->
-            
-          </ul>
-        </nav>
-      </div>
-    </div> <!-- /container -->
+  <div class="masthead">
+    <h3 class="text-muted">Opciones</h3>
+    <nav>
+      <ul class="nav nav-justified">
+        <li>{{#link-to 'login'}} Login {{/link-to}}</li>
+        <li>{{#link-to 'register'}} Registar Usuario {{/link-to}}</li>
+        <li>{{#link-to 'calculadora'}} Calculadora {{/link-to}}</li>
+        <li>{{#link-to 'people.list'}} Listar Usuarios {{/link-to}}</li>
+        <!--li> Logout {{action 'logout'}}  </li-->
+
+      </ul>
+    </nav>
+  </div>
+</div>
+<!-- /container -->
 {{outlet}}

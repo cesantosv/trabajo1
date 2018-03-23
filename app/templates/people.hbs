@@ -1,12 +1,5 @@
-{{!--#each model.people as |person|}}
-    
-        
-         {{#link-to 'people.person' person.id}}
-               
-               <a href="#" class="login" >Hello {{person.name}}</a>
-               
-        {{/link-to}}
-        
-{{/each--}}
+{{!--#each model.people as |person|}} {{#link-to 'people.person' person.id}}
 
-{{outlet}}
+<a href="#" class="login">Hello {{person.name}}</a>
+
+{{/link-to}} {{/each--}} {{outlet}}

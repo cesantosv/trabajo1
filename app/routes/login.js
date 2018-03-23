@@ -1,20 +1,20 @@
 import Route from '@ember/routing/route';
-import { inject as service} from '@ember/service';
+import { inject as service } from '@ember/service';
 
 export default Route.extend({
     model() {
         return {
-             error : null,
+            error: null,
         };
     },
 
-    singservice : service('sing-service'),
+    singservice: service('sing-service'),
 
-    beforeModel(){
-        if(localStorage.getItem('controlSession')){
+    beforeModel() {
+        if (localStorage.getItem('controlSession')) {
             this.replaceWith('home');
         }
-        else{
+        else {
             this.replaceWith('login');
         }
     }

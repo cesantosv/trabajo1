@@ -26,9 +26,9 @@ export default Service.extend({
 
     people: [
         {
-            name:"Carlos",
-            salary:"1000",
-            gender:"M",
+            name: "Carlos",
+            salary: "1000",
+            gender: "M",
         },
     ],
 
@@ -40,8 +40,8 @@ export default Service.extend({
         return this.people;
     },
 
-    updatePeople(item){
+    updatePeople(item) {
         this.get('people').pushObject(item);
     },
- 
+
 });

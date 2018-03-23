@@ -28,54 +28,29 @@ export default Controller.extend(EmberValidations, {
     actions: {
       login(){
         showErrors: false;
-        /*
-        let { userName, password } = this.getProperties('userName', 'password');
-        this.validate().then(()=>{
-          this.get("sessionservice").login(userName, password).then(()=>{
-            this.get('flashMessages').success('You have signed in succesfully');
-            this.transitionToPreviousRoute();
-          }).catch((reason)=>{
-            this.set('showErrors',true);  
-            this.get('flashMessages').danger(reason);
-          });
-        }).catch((errors)=>{
-          displayFlashErrors(errors, this.get('flashMessages'));
-         //console.log('Contraseña incorrecta');
-        });
-      }*/
+
       var users = this.get('usersService').getUsers();
       let { userName, password } = this.getProperties('userName', 'password');
 
       var search = users.findBy('usuario',userName);
       if(userName == null){
-        //  this.set('model.error',"No se han ingresado datos");
-        this.get('flashMessages').danger('user vacios');
+        this.get('flashMessages').danger('EL CAMPO USUARIO NO PUEDE SER VACIO');
       if(password == null){
-        this.set('password','1234567');
-        this.get('flashMessages').danger('contraseña vacios');
+        this.get('flashMessages').danger('EL CAMPO CONTRASEÑA NO PUEDE SER VACIO');
       }
       } if(!search || search.contrasena !== password){
-          this.get('flashMessages').danger('Usuario o Contraseña Incorrecta !');
+          this.get('flashMessages').danger('USUARIO O CONTRASEÑA !');
       } else {
+          
           this.get('sessionservice').setControlSession(true,userName);
           localStorage.setItem("controlSession", true);
           localStorage.setItem("userName", userName);
           this.set('userName',"");
           this.set('password',"");
-       //   this.transitionToRoute('calculadora');
-       //  this.transitionToPreviousRoute();
+          this.transitionToRoute('home');
+
       }
        
-    },
-    transitionToPreviousRoute(){
-      var previousTransition = this.get('previousTransition');
-      if (previousTransition) {
-        this.set('previousTransition', null);
-        previousTransition.retry();
-      } else {
-        // Default back to homepage
-        this.transitionToRoute('login');
-      }
     },
   }
 }

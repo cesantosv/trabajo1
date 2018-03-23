@@ -5,20 +5,34 @@
 
         <label for="inputuser" class="sr-only">Usuario</label>
 
-        <input type="userName" id="inputuser" value={{userName}} class="form-control" placeholder="Usuario" required autofocus>
+        <input type="text" id="inputuser" value={{userName}} class="form-control" placeholder="Usuario" required autofocus>
         {{display-errors errors=errors.userName showErrors=showErrors}}
 
         <label for="inputPassword" class="sr-only">Password</label>
 
         <input type="password" id="inputPassword"value={{password}} class="form-control" placeholder="Contraseña" required>
         {{display-errors errors=errors.password showErrors=showErrors}}
+
+        <label for="inputsalary" class="sr-only">Salario</label>
+
+        <input type="number" id="inputsalary"value={{salary}} class="form-control" placeholder="Salario" required>
+        {{display-errors errors=errors.salary showErrors=showErrors}}
+
+        <label for="inputgender" class="sr-only">Genero</label>
+
+        <input type="text" id="inputgender"value={{gender}} class="form-control" placeholder="Genero" required>
+        {{display-errors errors=errors.gender showErrors=showErrors}}
+
+        
         
         <button class="btn btn-lg btn-primary btn-block" {{action 'register'}}>Registar</button>
       </form>
+      <div class="form-signin">
       <div class="flash-messages">
       {{#each flashMessages.queue as |flash|}}
       {{flash-message flash=flash}}
     {{/each}}
+  </div>
   </div>
 </div>
 {{outlet}}

@@ -11,18 +11,8 @@ export default Controller.extend({
 
 export default Ember.Controller.extend(validations, {
     showErrors: false,
-    session: Ember.inject.service(),
-    /* validations: {
-       numero1: {
-         presence: true,
-         length: {minimum: 1, maximum:5},
-       },
-       numero2: {
-         presence: true,
-         length: {minimum: 1, maximum:5},
-         
-       }
-     }*/
+  //  session: Ember.inject.service(),
+  //mock : service('mock-service'),
 
     messagerror: computed('model.error', function () {
         return this.get('model.error');
@@ -40,6 +30,7 @@ export default Ember.Controller.extend(validations, {
             let { numero1, numero2 } = this.getProperties('numero1', 'numero2');
             if (numero1 > 1000 || numero1 < -1000) {
                 this.get('flashMessages').danger('EL PRIMER NUMERO NO SE ENCUENTRA EN EL RANGO [ -1000 , 1000 ]');
+                this.get('flashMessages').success('Success!');
                 this.set('model.rsulop', null);
                 this.set('model.msgcolor', true);
             }
@@ -60,7 +51,7 @@ export default Ember.Controller.extend(validations, {
                 this.set('model.msgcolor', true);
             } else {
                 var suma = Number(numero1) + Number(numero2);
-                this.set('model.error', "Operacion realizada");
+                this.get('flashMessages').success('Operacion Realizada Satisfactoriamente!');
                 this.set('model.rsulop', "La suma es " + suma);
             }
         },

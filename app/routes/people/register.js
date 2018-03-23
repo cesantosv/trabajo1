@@ -5,7 +5,7 @@ export default Route.extend({
     singservice : service('sing-service'),
 
     beforeModel(){
-        if(this.get('singservice').control){
+        if(localStorage.getItem('controlSession')){
             this.replaceWith('people.register');
         }
         else{

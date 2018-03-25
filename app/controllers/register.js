@@ -5,11 +5,9 @@ import displayFlashErrors from '../utils/display-flash-errors';
 import { inject as service } from '@ember/service';
 import { computed } from '@ember/object';
 
-/*
-export default Controller.extend({
-});*/
 
-export default Controller.extend( {
+
+export default Controller.extend({
   showErrors: false,
   mock: service('mock-service'),
 
@@ -25,22 +23,22 @@ export default Controller.extend( {
       else if (salary < 0) {
         this.get('flashMessages').danger('EL SALARIO NO PUEDE SER NEGATIVO');
       }
-      else if (gender.localeCompare('M')!==0 && gender.localeCompare('F')!=0 ) {
-        this.get('flashMessages').success('EL GENERO DEBE SER M Ó F');
+      else if (gender.localeCompare('M') !== 0 && gender.localeCompare('F') != 0) {
+        this.get('flashMessages').danger('EL GENERO DEBE SER M Ó F');
       }
       else {
         var person = {
           userName: userName,
-          password : password,
+          password: password,
           salary: salary,
           gender: gender
         }
         this.get('mock').updatePeople(person);
         this.get('flashMessages').success('PERSONA REGISTRADA SATISFACTORIAMENTE');
-        this.set('userName',"");
-        this.set('password',"");
-        this.set('salary',"");
-        this.set('gender',"");
+        this.set('userName', "");
+        this.set('password', "");
+        this.set('salary', "");
+        this.set('gender', "");
       }
 
 

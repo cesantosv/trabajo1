@@ -1,1 +1,9 @@
-{{#each model as |author|}} {{author.name}} {{/each}} {{outlet}}
+{{#each model as |author|}} 
+<div class="form-signin">
+    <h2>{{author.name}}</h2>
+    <p><strong>Fecha de Nacimiento:</strong> {{author.dateOfBirth}}</p>
+    <p><strong>Fecha de Muerte:</strong> {{author.dateOfDeath}}</p>
+    <p><strong>Creado:</strong> {{author.createdAt}}</p>
+    </div>
+{{/each}} 
+{{outlet}}

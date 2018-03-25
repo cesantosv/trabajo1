@@ -39,7 +39,7 @@ export default Controller.extend(EmberValidations, {
           this.get('flashMessages').danger('EL CAMPO CONTRASEÑA NO PUEDE SER VACIO');
         }
       } if (!search || search.contrasena !== password) {
-        this.get('flashMessages').danger('USUARIO O CONTRASEÑA !');
+        this.get('flashMessages').danger('USUARIO O CONTRASEÑA INCORRECTOS!');
       } else {
 
         this.get('sessionservice').setControlSession(true, userName);

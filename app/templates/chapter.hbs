@@ -1,0 +1,22 @@
+{{#each model as |chapter|}}
+<div class="form-signin">
+
+    <h2>{{chapter.title}}</h2>
+    {{!#link-to 'author' author.name}}{{!/link-to}}
+    <p>
+        <strong>Libro:</strong>
+        <ul>
+            <li>{{chapter.book.title}}</li>
+        </ul>
+    </p>
+
+    <p>
+        <strong>Id Capitulo:</strong> {{#link-to 'chapter'}}{{chapter.id}}{{/link-to}}</p>
+    <p>
+        <strong>Orden</strong> {{chapter.ordering}}</p>
+
+
+
+</div>
+
+{{/each}} {{author-detail author=model}} {{outlet}}

@@ -1,10 +1,9 @@
-{{#each model as |author|}}
-<div class="form-signin">
-    
+<div class="author-detail">
+    {{#each model as |author|}}
     <h2>{{author.name}}</h2>
     {{!#link-to 'author' author.name}}{{!/link-to}}
     <p>
-        <strong>Id Autor:</strong> {{#link-to 'author'}}{{author.id}}{{/link-to}}</p>
+        <strong>Id Autor:</strong> {{#link-to 'author' author.id}}{{author.id}}{{/link-to}}</p>
     <p>
         <strong>Fecha de Nacimiento:</strong> {{author.dateOfBirth}}</p>
     <p>
@@ -20,9 +19,7 @@
             <strong>{{author.books.length}}</strong>
         </h3>
     </p>
-    
+    {{/each}}
 </div>
 
-{{/each}}
-{{author-detail author=model}} 
-{{outlet}}
+{{yield}}

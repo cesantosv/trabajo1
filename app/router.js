@@ -13,13 +13,15 @@ Router.map(function () {
   this.route('calculadora');
 
   this.route('people', function () {
-   // this.route('register');
+    // this.route('register');
     this.route('list');
     this.route('person', { path: ':id' });
   });
-  this.route('author');
+  this.route('author' /*, { path: ':id' }*/);
   this.route('home');
   this.route('register');
+  this.route('book');
+  this.route('chapter');
 });
 
 export default Router;

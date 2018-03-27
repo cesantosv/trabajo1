@@ -1,7 +1,7 @@
 import Controller from '@ember/controller';
-import Ember from 'ember';
+//import Ember from 'ember';
 import EmberValidations from 'ember-validations';
-import displayFlashErrors from '../utils/display-flash-errors';
+//import displayFlashErrors from '../utils/display-flash-errors';
 import { inject as service } from '@ember/service';
 
 /*

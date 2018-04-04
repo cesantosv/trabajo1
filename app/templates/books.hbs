@@ -1,0 +1,33 @@
+{{#each model as |book|}}
+<div class="form-signin">
+    <h2>{{#link-to 'books.book' book.id}} {{book.title}} {{/link-to}}
+    </h2>
+    <p>
+        <strong>Autor:</strong>
+        <ul>
+            <li>
+                {{#link-to 'authors.author' book.author.id}} {{book.author.name}} {{/link-to}} 
+            </li>
+        </ul>
+    </p>
+    <!--h3>La cantidad total de capitulos son :
+        <strong>{{book.chapters.length}}</strong>
+    </h3>
+    <p>
+        <strong>Fecha de Publicacion:</strong> {{book.datePublished}}
+    </p>
+    <p>
+        <strong>Capitulos:</strong>
+        <ul>
+            {{#each book.chapters as |chapters|}}
+            <li>{{chapters.title}}</li>
+            {{/each}}
+        </ul>
+    </p>
+
+
+    <button class="btn btn-lg btn-primary btn-block" {{action 'Editar'}}>Editar</button>
+    <br/>
+    <button class="btn btn-lg btn-primary btn-block" {{action 'Eliminar'}}>Eliminar</button-->
+</div>
+{{/each}} {{outlet}}

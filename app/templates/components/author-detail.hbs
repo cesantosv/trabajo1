@@ -1,9 +1,9 @@
+<div class="form-signin">
+
 <div class="author-detail">
-    {{#each model as |author|}}
     <h2>{{author.name}}</h2>
-    {{!#link-to 'author' author.name}}{{!/link-to}}
     <p>
-        <strong>Id Autor:</strong> {{#link-to 'author' author.id}}{{author.id}}{{/link-to}}</p>
+        <strong>Id Autor:</strong> {{author.id}}</p>
     <p>
         <strong>Fecha de Nacimiento:</strong> {{author.dateOfBirth}}</p>
     <p>
@@ -12,14 +12,15 @@
         <strong>Libros:</strong>
         <ul>
             {{#each author.books as |books|}}
-            <li>{{books.title}}</li>
+            <li>{{#link-to 'books.book' books.id}} {{books.title}} {{/link-to}}</li>
             {{/each}}
         </ul>
         <h3>La cantidad total de libros que ha escrito es :
             <strong>{{author.books.length}}</strong>
         </h3>
     </p>
-    {{/each}}
+
+</div>
 </div>
 
 {{yield}}

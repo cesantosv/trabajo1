@@ -1,12 +1,5 @@
-{{#each model as |book|}}
 <div class="form-signin">
-    <h2>{{book.title}}</h2>
-    <p>
-        <strong>Autor:</strong>
-        <ul>
-            <li>{{book.author.name}}</li>
-        </ul>
-    </p>
+    <div class="book-detail">
     <h3>La cantidad total de capitulos son :
         <strong>{{book.chapters.length}}</strong>
     </h3>
@@ -21,10 +14,14 @@
             {{/each}}
         </ul>
     </p>
-
-
+    
     <button class="btn btn-lg btn-primary btn-block" {{action 'Editar'}}>Editar</button>
     <br/>
     <button class="btn btn-lg btn-primary btn-block" {{action 'Eliminar'}}>Eliminar</button>
+    
+
+    </div>
+
 </div>
-{{/each}} {{outlet}}
+
+{{yield}}

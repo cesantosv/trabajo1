@@ -1,0 +1,11 @@
+ {{#each model as |author|}}
+
+<div class="form-signin">
+    <h2>{{#link-to 'authors.author' author.id}}
+        {{author.name}}
+        {{/link-to}}
+    </h2>
+</div>
+
+{{/each}} 
+{{outlet}}

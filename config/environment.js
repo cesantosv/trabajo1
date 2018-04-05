@@ -1,11 +1,19 @@
 'use strict';
 
-module.exports = function(environment) {
+module.exports = function (environment) {
   let ENV = {
     modulePrefix: 'trabajo1',
     environment,
     rootURL: '/',
     locationType: 'auto',
+    firebase: {
+      apiKey: "AIzaSyCUho_i145RKA-aIP1yZOMR4bwnRMij7eI",
+      authDomain: "authors-dcps.firebaseapp.com",
+      databaseURL: "https://authors-dcps.firebaseio.com",
+      projectId: "authors-dcps",
+      storageBucket: "authors-dcps.appspot.com",
+      messagingSenderId: "396892936646"
+    },
     EmberENV: {
       FEATURES: {
         // Here you can enable experimental features on an ember canary build
